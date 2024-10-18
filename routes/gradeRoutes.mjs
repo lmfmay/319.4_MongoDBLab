@@ -21,4 +21,8 @@ router.route('/class/:id')
 router.route('/')
     .post(gradesController.createGrade);
 
+//get weighted avg for learner across all classes
+router.route('/student/:id/avg')
+    .get(gradesController.studentClassesAvg)
+
 export default router;
