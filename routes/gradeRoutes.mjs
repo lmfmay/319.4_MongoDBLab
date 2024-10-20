@@ -6,8 +6,8 @@ const router = express.Router();
 
 //routes
 //get grades by ID
-router.route('/:id')
-    .get(gradesController.getSingleGrade);
+// router.route('/:id')
+//     .get(gradesController.getSingleGrade);
 
 //get student by id
 router.route('/student/:id')
@@ -24,5 +24,9 @@ router.route('/')
 //get weighted avg for learner across all classes
 router.route('/student/:id/avg')
     .get(gradesController.studentClassesAvg)
+
+//get stats of learners with a weighted average of >70%
+router.route('/stats')
+    .get(gradesController.learnersPassing)
 
 export default router;
